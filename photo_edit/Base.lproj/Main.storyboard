@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fGt-8q-yNV">
-                                <rect key="frame" x="11" y="72" width="582" height="387"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-ez-Uej">
                                 <rect key="frame" x="128" y="467" width="57" height="30"/>
                                 <constraints>
@@ -69,20 +66,26 @@
                                     <action selector="addText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B0f-1g-FoR"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fGt-8q-yNV">
+                                <rect key="frame" x="9" y="90" width="582" height="369"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XwY-ez-Uej" firstAttribute="top" secondItem="fGt-8q-yNV" secondAttribute="bottom" constant="8" id="5mP-4I-VGF"/>
                             <constraint firstAttribute="bottom" secondItem="XwY-ez-Uej" secondAttribute="bottom" constant="103" id="8vg-eF-Gdu"/>
                             <constraint firstItem="bqy-Ic-gfI" firstAttribute="leading" secondItem="XwY-ez-Uej" secondAttribute="trailing" constant="-57" id="IRD-eK-sfv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fGt-8q-yNV" secondAttribute="trailing" constant="-9" id="Jzy-td-DTG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fGt-8q-yNV" secondAttribute="trailing" constant="-7" id="Jzy-td-DTG"/>
                             <constraint firstItem="ljG-eJ-cqY" firstAttribute="baseline" secondItem="EHD-Dh-399" secondAttribute="baseline" constant="54" id="KVK-Ov-ul2"/>
                             <constraint firstAttribute="trailing" secondItem="EHD-Dh-399" secondAttribute="trailing" constant="268" id="P9n-lL-hXK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ljG-eJ-cqY" secondAttribute="trailing" constant="261" id="RGZ-qA-NnF"/>
+                            <constraint firstAttribute="centerY" secondItem="fGt-8q-yNV" secondAttribute="centerY" constant="25.5" id="Yav-BQ-Aeu"/>
+                            <constraint firstAttribute="centerX" secondItem="fGt-8q-yNV" secondAttribute="centerX" id="Zr2-X1-90y"/>
                             <constraint firstItem="EHD-Dh-399" firstAttribute="baseline" secondItem="bqy-Ic-gfI" secondAttribute="baseline" constant="-54" id="bsZ-eG-NwG"/>
                             <constraint firstItem="XwY-ez-Uej" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="112" id="dZo-VO-rjp"/>
-                            <constraint firstItem="fGt-8q-yNV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="ngQ-vW-8pM"/>
-                            <constraint firstItem="fGt-8q-yNV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="72" id="otm-Cq-Zcx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fGt-8q-yNV" secondAttribute="bottom" constant="141" id="h65-d3-vaL"/>
+                            <constraint firstItem="fGt-8q-yNV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-7" id="ngQ-vW-8pM"/>
+                            <constraint firstItem="fGt-8q-yNV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="90" id="otm-Cq-Zcx"/>
                             <constraint firstItem="bqy-Ic-gfI" firstAttribute="baseline" secondItem="XwY-ez-Uej" secondAttribute="baseline" constant="54" id="rdF-RY-oqI"/>
                         </constraints>
                     </view>

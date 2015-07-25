@@ -54,18 +54,17 @@
 
 - (IBAction)addText:(id)sender
 {
-    // This allocates a label
-    UILabel *prefixLabel = [[UILabel alloc]initWithFrame:CGRectZero];
+   // This allocates a label
+    UILabel *prefixLabel = [[UILabel alloc]init];//WithFrame:CGRectZero];
     //This sets the label text
-    prefixLabel.text =@"## ";
+    prefixLabel.text =@"Your Text Goes Here";
     // This sets the font for the label
     [prefixLabel setFont:[UIFont boldSystemFontOfSize:14]];
     // This fits the frame to size of the text
     [prefixLabel sizeToFit];
     
     // This allocates the textfield and sets its frame
-    UITextField *textField = [[UITextField  alloc] initWithFrame:
-                              CGRectMake(20, 50, 280, 30)];
+    UITextField *textField = [[UITextField  alloc] initWithFrame:CGRectMake(20, 50, 280, 30)];
     
     // This sets the border style of the text field
     //textField.borderStyle = UITextBorderStyleRoundedRect;
@@ -87,6 +86,7 @@
     
     // sets the delegate to the current class
     textField.delegate = self;
+    
 }
 
 - (IBAction)save:(id)sender
