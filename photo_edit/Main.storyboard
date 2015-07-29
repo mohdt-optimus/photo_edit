@@ -3,6 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,24 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gZs-zJ-ytu">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gZs-zJ-ytu">
+                                <rect key="frame" x="5" y="64" width="586" height="492"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3e-Rp-m0b">
-                                        <rect key="frame" x="146" y="270" width="146" height="158"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3e-Rp-m0b">
+                                        <rect key="frame" x="227" y="167" width="132" height="158"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p8h-F3-PCo">
-                                                <rect key="frame" x="-2" y="-1" width="148" height="159"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="0.0" y="-1" width="134" height="159"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgB-3Q-yoB">
-                                        <rect key="frame" x="321" y="370" width="149" height="43"/>
+                                    <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgB-3Q-yoB">
+                                        <rect key="frame" x="227" y="333" width="135" height="43"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Your Text Here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8WV-ob-dM8">
-                                                <rect key="frame" x="-6" y="13" width="162" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Your Text Here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8WV-ob-dM8">
+                                                <rect key="frame" x="0.0" y="7" width="146" height="30"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -46,15 +46,25 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="8WV-ob-dM8" firstAttribute="centerX" secondItem="gZs-zJ-ytu" secondAttribute="centerX" constant="7" id="D8D-dL-fIe"/>
+                                    <constraint firstItem="a3e-Rp-m0b" firstAttribute="centerX" secondItem="gZs-zJ-ytu" secondAttribute="centerX" id="HuF-h9-iUq"/>
+                                    <constraint firstAttribute="centerY" secondItem="pgB-3Q-yoB" secondAttribute="centerY" constant="-108.5" id="Kpd-ns-crf"/>
+                                    <constraint firstItem="a3e-Rp-m0b" firstAttribute="centerY" secondItem="gZs-zJ-ytu" secondAttribute="centerY" id="Wwz-1C-eJ6"/>
+                                    <constraint firstItem="8WV-ob-dM8" firstAttribute="centerY" secondItem="gZs-zJ-ytu" secondAttribute="centerY" constant="109" id="XdN-eU-3lw"/>
+                                    <constraint firstItem="pgB-3Q-yoB" firstAttribute="top" secondItem="a3e-Rp-m0b" secondAttribute="bottom" constant="8" symbolic="YES" id="hwv-Zc-AdB"/>
+                                    <constraint firstAttribute="centerX" secondItem="pgB-3Q-yoB" secondAttribute="centerX" constant="-1.5" id="n4d-PO-ma7"/>
+                                </constraints>
                             </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nfp-kO-yVD">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfp-kO-yVD">
+                                <rect key="frame" x="5" y="548" width="586" height="44"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vMf-u1-r2R"/>
                                     <barButtonItem style="plain" id="Pe4-y0-w5T">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XwY-ez-Uej">
-                                            <rect key="frame" x="28" y="524" width="57" height="30"/>
+                                            <rect key="frame" x="166" y="7" width="70" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Camera">
+                                            <state key="normal" title="Camera  ||">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -62,11 +72,23 @@
                                             </connections>
                                         </button>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" id="VQd-oY-9sC">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bqy-Ic-gfI">
+                                            <rect key="frame" x="37" y="562" width="60" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Gallery ||">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="gallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AeO-vu-XG1"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" id="oWU-k7-lGm">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EHD-Dh-399">
-                                            <rect key="frame" x="102" y="524" width="74" height="30"/>
+                                            <rect key="frame" x="310" y="7" width="87" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Insert Text">
+                                            <state key="normal" title="Insert Text  ||">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -86,28 +108,23 @@
                                             </connections>
                                         </button>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" id="VQd-oY-9sC">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bqy-Ic-gfI">
-                                            <rect key="frame" x="37" y="562" width="60" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Gallery">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="gallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AeO-vu-XG1"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SXA-wn-PPZ"/>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="nfp-kO-yVD" secondAttribute="trailing" constant="-7" id="0tR-QX-e5M"/>
+                            <constraint firstItem="nfp-kO-yVD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-11" id="URW-wF-d2A"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nfp-kO-yVD" secondAttribute="bottom" constant="8" id="Xe6-Ou-hz5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1cp-n8-c1X"/>
                     <connections>
                         <outlet property="imageView" destination="p8h-F3-PCo" id="Dkb-tl-hsO"/>
                         <outlet property="mainView" destination="a3e-Rp-m0b" id="3t6-Xu-mg8"/>
                         <outlet property="textView" destination="pgB-3Q-yoB" id="Gc9-wq-i5G"/>
+                        <outlet property="viewScreen" destination="gZs-zJ-ytu" id="qOm-j0-Mwk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
