@@ -10,10 +10,9 @@
 		DB808B0E1B620FA6004DB9D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB808B0D1B620FA6004DB9D1 /* main.m */; };
 		DB808B111B620FA6004DB9D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB808B101B620FA6004DB9D1 /* AppDelegate.m */; };
 		DB808B141B620FA6004DB9D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB808B131B620FA6004DB9D1 /* ViewController.m */; };
-		DB808B171B620FA6004DB9D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB808B151B620FA6004DB9D1 /* Main.storyboard */; };
 		DB808B191B620FA6004DB9D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB808B181B620FA6004DB9D1 /* Images.xcassets */; };
-		DB808B1C1B620FA7004DB9D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB808B1A1B620FA7004DB9D1 /* LaunchScreen.xib */; };
 		DB808B281B620FA7004DB9D1 /* photo_editTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB808B271B620FA7004DB9D1 /* photo_editTests.m */; };
+		DB9C76041B68ECF0008E805B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9C76031B68ECF0008E805B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +33,11 @@
 		DB808B101B620FA6004DB9D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DB808B121B620FA6004DB9D1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DB808B131B620FA6004DB9D1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		DB808B161B620FA6004DB9D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB808B181B620FA6004DB9D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DB808B1B1B620FA7004DB9D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DB808B211B620FA7004DB9D1 /* photo_editTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photo_editTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB808B261B620FA7004DB9D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB808B271B620FA7004DB9D1 /* photo_editTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photo_editTests.m; sourceTree = "<group>"; };
+		DB9C76031B68ECF0008E805B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +79,12 @@
 		DB808B0A1B620FA6004DB9D1 /* photo_edit */ = {
 			isa = PBXGroup;
 			children = (
+				DB9C76031B68ECF0008E805B /* Main.storyboard */,
 				DB808B0F1B620FA6004DB9D1 /* AppDelegate.h */,
 				DB808B101B620FA6004DB9D1 /* AppDelegate.m */,
 				DB808B121B620FA6004DB9D1 /* ViewController.h */,
 				DB808B131B620FA6004DB9D1 /* ViewController.m */,
-				DB808B151B620FA6004DB9D1 /* Main.storyboard */,
 				DB808B181B620FA6004DB9D1 /* Images.xcassets */,
-				DB808B1A1B620FA7004DB9D1 /* LaunchScreen.xib */,
 				DB808B0B1B620FA6004DB9D1 /* Supporting Files */,
 			);
 			path = photo_edit;
@@ -199,9 +196,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB808B171B620FA6004DB9D1 /* Main.storyboard in Resources */,
-				DB808B1C1B620FA7004DB9D1 /* LaunchScreen.xib in Resources */,
 				DB808B191B620FA6004DB9D1 /* Images.xcassets in Resources */,
+				DB9C76041B68ECF0008E805B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,25 +238,6 @@
 			targetProxy = DB808B221B620FA7004DB9D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		DB808B151B620FA6004DB9D1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB808B161B620FA6004DB9D1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DB808B1A1B620FA7004DB9D1 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB808B1B1B620FA7004DB9D1 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DB808B291B620FA7004DB9D1 /* Debug */ = {
@@ -418,6 +395,7 @@
 				DB808B2D1B620FA7004DB9D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB808B2E1B620FA7004DB9D1 /* Build configuration list for PBXNativeTarget "photo_editTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +404,7 @@
 				DB808B301B620FA7004DB9D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

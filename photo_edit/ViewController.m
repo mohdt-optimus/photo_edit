@@ -10,13 +10,55 @@
 
 @interface ViewController ()
 
+-(void)moveImage:(UIPanGestureRecognizer *)panGestureRecognizer;
+-(void)moveText:(UIPanGestureRecognizer *)panGestureRecognizer1;
+-(void)shrinkInOutImage:(UIPinchGestureRecognizer *)pinchGestureRecognizer;
+-(void)shrinkInOutText:(UIPinchGestureRecognizer *)pinchGestureRecognizer1;
+-(void)rotateImage:(UIRotationGestureRecognizer *)rotationGestureRecognizer;
+-(void)rotateText:(UIRotationGestureRecognizer *)rotationGestureRecognizer1;
+
+
+
+
 @end
 
 @implementation ViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    UIPanGestureRecognizer *moveImageGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveImage:)];
+    [self.mainView addGestureRecognizer:moveImageGesture];
+    
+    UIPanGestureRecognizer *moveTextGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveText:)];
+    [self.textView addGestureRecognizer:moveTextGesture];
+    
+
+    UIPinchGestureRecognizer *shrinkImageGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(shrinkInOutImage:)];
+    [self.mainView addGestureRecognizer:shrinkImageGesture];
+    
+    UIPinchGestureRecognizer *shrinkTextGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(shrinkInOutText:)];
+    [self.textView addGestureRecognizer:shrinkTextGesture];
+    
+    UIRotationGestureRecognizer *rotateImageGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateImage:)];
+    [self.mainView addGestureRecognizer:rotateImageGesture];
+    
+    UIRotationGestureRecognizer *rotateTextGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateText:)];
+    [self.textView addGestureRecognizer:rotateTextGesture];
+
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,44 +96,26 @@
 
 - (IBAction)addText:(id)sender
 {
-   // This allocates a label
-    UILabel *prefixLabel = [[UILabel alloc]init];//WithFrame:CGRectZero];
-    //This sets the label text
-    prefixLabel.text =@"Your Text Goes Here";
-    // This sets the font for the label
-    [prefixLabel setFont:[UIFont boldSystemFontOfSize:14]];
-    // This fits the frame to size of the text
-    [prefixLabel sizeToFit];
-    
-    // This allocates the textfield and sets its frame
-    UITextField *textField = [[UITextField  alloc] initWithFrame:CGRectMake(20, 50, 280, 30)];
-    
-    // This sets the border style of the text field
-    //textField.borderStyle = UITextBorderStyleRoundedRect;
-    textField.contentVerticalAlignment =
-    UIControlContentVerticalAlignmentCenter;
-    [textField setFont:[UIFont boldSystemFontOfSize:12]];
-    
-    //Placeholder text is displayed when no text is typed
-    textField.placeholder = @"Simple Text field";
-    
-    //Prefix label is set as left view and the text starts after that
-    textField.leftView = prefixLabel;
-    
-    //It set when the left prefixLabel to be displayed
-    textField.leftViewMode = UITextFieldViewModeAlways;
-    
-    // Adds the textField to the view.
-    [self.view addSubview:textField];
-    
-    // sets the delegate to the current class
-    textField.delegate = self;
-    
+    _textView.hidden=false;
 }
 
 - (IBAction)save:(id)sender
 {
-    UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+   // UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    [self snapshot:self.imageView];
+    
+     UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+}
+
+
+- (UIImage *)snapshot:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0);
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
@@ -116,4 +140,49 @@
                                           otherButtonTitles:nil];
     [alert show];
 }
+
+
+-(void)moveImage:(UIPanGestureRecognizer *)panGestureRecognizer
+{
+    CGPoint touchLocation = [panGestureRecognizer locationInView:self.view];
+    self.mainView.center = touchLocation;
+}
+
+-(void)moveText:(UIPanGestureRecognizer *)panGestureRecognizer
+{
+    CGPoint touchLocation = [panGestureRecognizer locationInView:self.view];
+    self.textView.center = touchLocation;
+}
+
+
+-(void)shrinkInOutImage:(UIPinchGestureRecognizer *)pinchGestureRecognizer
+{
+    self.mainView.transform = CGAffineTransformScale(self.mainView.transform, pinchGestureRecognizer.scale, pinchGestureRecognizer.scale);
+    
+    pinchGestureRecognizer.scale = 1.0;
+}
+-(void)shrinkInOutText:(UIPinchGestureRecognizer *)pinchGestureRecognizer
+{
+    self.textView.transform = CGAffineTransformScale(self.textView.transform, pinchGestureRecognizer.scale, pinchGestureRecognizer.scale);
+    
+    pinchGestureRecognizer.scale = 1.0;
+}
+
+
+-(void)rotateImage:(UIRotationGestureRecognizer *)rotationGestureRecognizer
+{
+    self.mainView.transform = CGAffineTransformRotate(self.mainView.transform, rotationGestureRecognizer.rotation);
+    
+    rotationGestureRecognizer.rotation = 0.0;
+}
+
+-(void)rotateText:(UIRotationGestureRecognizer *)rotationGestureRecognizer
+{
+    self.textView.transform = CGAffineTransformRotate(self.textView.transform, rotationGestureRecognizer.rotation);
+    
+    rotationGestureRecognizer.rotation = 0.0;
+}
+
+
+
 @end
